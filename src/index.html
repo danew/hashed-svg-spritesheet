@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Minimal React Webpack Babel Setup</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.SvgLookup = <%= JSON.stringify(Object.keys(compilation.assets).filter(i => i.includes('svg')).reduce((files, next) => ({ ...files, [next.split('.')[0]]: next }), {})) %>
+    </script>
+  </body>
+</html>
